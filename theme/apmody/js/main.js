@@ -8,7 +8,6 @@ var mRw1=atob('aHR0cHM6Ly9yYXdjZG4uZ2l0aGFjay5jb20vYXJ1Znh1ZW56YWt1L2Jsb2dnZXIv'
 
 /*bookmarkPost*/
 if(1==ARtb.bookmarkPost){
-	const c=document.createElement("script");c.type="text/javascript",c.async=!0,c.src=rwBkm,document.body.appendChild(c)
 	ldJs("https://rawcdn.githack.com/arufxuenzaku/blogger/1ecfe0f7b8b857b314db3de04e079116329da232/theme/apmody/js/_bookmark_post.js", "bkm-js", !0, "body");
 }
 
