@@ -9,17 +9,18 @@ var mRw1=atob('aHR0cHM6Ly9yYXdjZG4uZ2l0aGFjay5jb20vYXJ1Znh1ZW56YWt1L2Jsb2dnZXIv'
 /*bookmarkPost*/
 if(1==ARtb.bookmarkPost){
 	const c=document.createElement("script");c.type="text/javascript",c.async=!0,c.src=rwBkm,document.body.appendChild(c)
-	ldJs(rwBkm, "bkm-js", !0, "body");
+	ldJs("https://rawcdn.githack.com/arufxuenzaku/blogger/1ecfe0f7b8b857b314db3de04e079116329da232/theme/apmody/js/_bookmark_post.js", "bkm-js", !0, "body");
 }
 
 /*clickFraud*/
 if(1==ARtb.clickFraudDetect){
-	ldJs(rwCfd, "cfd-js", !0, "body");
+	ldJs("https://rawcdn.githack.com/arufxuenzaku/blogger/1ecfe0f7b8b857b314db3de04e079116329da232/theme/apmody/js/_click_fraud.js", "cfd-js", !0, "body");
 }
 
 /**googleTranslate**/
 if(1==ARtb.googleTranslate){
-	ldJs(rwGts, "gts-js", !1, "body", function() {
+	qSel("#header-icon .headIc").insertAdjacentHTML("afterbegin",'<li id="google_translate_element"/>');
+	ldJs("https://rawcdn.githack.com/arufxuenzaku/blogger/1ecfe0f7b8b857b314db3de04e079116329da232/theme/apmody/js/_translate.js", "gts-js", !1, "body", function() {
 		null!=getclass("goog-te-gadget-simple")[0]&&addCt(getclass("goog-te-gadget-simple")[0],"tIc")
 	})
 }
