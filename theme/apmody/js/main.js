@@ -20,7 +20,7 @@ if(1==ARtb.clickFraudDetect){
 if(1==ARtb.googleTranslate){
 	qSel("#header-icon .headIc").insertAdjacentHTML("afterbegin",'<li id="google_translate_element"/>');
 	ldJs("https://rawcdn.githack.com/arufxuenzaku/blogger/1ecfe0f7b8b857b314db3de04e079116329da232/theme/apmody/js/_translate.js", "gts-js", !0, "body", function() {
-		null!=getclass("goog-te-gadget-simple")[0]&&addCt(getclass("goog-te-gadget-simple")[0],"tIc")
+		setTimeout((function(){null!=getclass("goog-te-gadget-simple")[0]&&addCt(getclass("goog-te-gadget-simple")[0],"tIc")}),2e3)}
 	})
 }
 
