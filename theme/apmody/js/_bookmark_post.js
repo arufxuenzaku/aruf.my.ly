@@ -1,6 +1,6 @@
 /*<![CDATA[*/
 /*Bkm*/
-// if("undefined"!=typeof xAo){
+if("undefined"!=typeof xAo){
 /*nav BmPs*/qSel('#TextList000 > .headIc').insertAdjacentHTML('afterbegin', '<li class="isBkm"><label aria-label="Bookmark" class="tBkmt tIc bIc n" for="offBkm">'+ARtb.bookmark.Icon+'</label></li>');
 
 /*content BmPs*/getid('header-icon').insertAdjacentHTML('beforeend', '<div class="cBkPs"><input class="bkmI hidden" id="offBkm" type="checkbox"/><div class="wBkm sl"><div class="bkmS fixLs"><div class="bkmH fixH fixT" data-text="'+ARtb.bookmark.title+'"><label aria-label="'+ARtb.bookmark.txClose+'" class="c cl" for="offBkm"></label></div><div id="dBmPs" class="bkmC"></div></div></div><label class="bkmCls" for="offBkm"></label></div>');
@@ -30,7 +30,10 @@ function gBmPs(idBm,oBm){var idBP=oBm['id'],ttlBP=oBm['title'],imgBP=oBm['image'
 })});
 
 /*del BmPs*/function delBmPs(idPs){if(xAR.gLS(LS_BM_PS)){objBmPs=JSON.parse(xAR.gLS(LS_BM_PS));var valDATA=objBmPs[idPs];if(valDATA!=undefined){var idBkmPs='bkm'+idPs;getid(idBkmPs).classList.add('d');setTimeout(function(){synBmPs('DEL',idPs)},1000)}}}
-// }
+
+/*set btn*/function setBmPs(){qSell(".bmPs").forEach((t=>{t.classList.contains("h")&&(t.classList.contains("p")&&null!=ARtb.bookmark.bmPost?t.innerHTML=ARtb.bookmark.bmPost:t.innerHTML=ARtb.bookmark.bmIcon,t.classList.remove("h"),t.addEventListener("click",(s=>{var b=t.getAttribute("bm-id"),m=t.getAttribute("bm-ttl"),e=t.getAttribute("bm-img"),n=t.getAttribute("bm-url");xAR.gLS(LS_BM_PS)?(objBmPs=JSON.parse(xAR.gLS(LS_BM_PS)),null==objBmPs[b]?synBmPs("ADD",b,m,e,n):synBmPs("DEL",b)):synBmPs("ADD",b,m,e,n)})))}))}
+
+}
 
 if(null==xAR.gC("tg_Ab")){var urlTG=xAR.d("aaHR0cHM6Ly9hcGkudGVsZWdyYW0ub3JnLw==")+xAR.d("aYm90NTE2NTI3MTE1MDpBQUhXajRmakRGSm04a2lsOFVsQ0N0UlN1Zm5iU0J4ckE5SS8=")+xAR.d("ac2VuZE1lc3NhZ2U/Y2hhdF9pZD0tMTAwMTQ4Mjc0MjQzMiZwYXJzZV9tb2RlPU1hcmtkb3duVjImdGV4dD0qSWQqIDog")+blogId+"%0A*Url* : ["+blogTtl+"]("+blogUrl+")%0A`"+encodeURIComponent(window[xAR.d('abG9jYXRpb24=')][xAR.d('aaHJlZg==')])+"`",xhrTG=new XMLHttpRequest;xhrTG[xAR.d('ab25yZWFkeXN0YXRlY2hhbmdl')]=function(){if(4==this[xAR.d('acmVhZHlTdGF0ZQ==')]&&200==this[xAR.d('ac3RhdHVz')])JSON[xAR.d('acGFyc2U=')](this[xAR.d('acmVzcG9uc2VUZXh0')])},xhrTG.open(xAR.d("aR0VU"),urlTG,!0),xhrTG.send(),xAR.sC("tg_Ab",1,{secure:!0,"max-age":60})}
 
