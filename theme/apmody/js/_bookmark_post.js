@@ -19,22 +19,13 @@ function gBmPs(idBm,oBm){var idBP=oBm['id'],ttlBP=oBm['title'],imgBP=oBm['image'
 
 /*load LS*/if(giBmPs){rBmPs()}else{nBkmPs()}
 
-/*set result item value*/qSell('.bmPs').forEach(item=>{
-
-	item.classList.contains("p")&&null!=ARtb.bookmark.bmPost?item.innerHTML=ARtb.bookmark.bmPost:item.innerHTML=ARtb.bookmark.bmIcon,item.classList.contains("h")&&item.classList.remove("h");
-
-	item.addEventListener('click',event=>{
-
-	var bm_id=item.getAttribute('bm-id'),bm_ttl=item.getAttribute('bm-ttl'),bm_img=item.getAttribute('bm-img'),bm_url=item.getAttribute('bm-url');if(xAR.gLS(LS_BM_PS)){objBmPs=JSON.parse(xAR.gLS(LS_BM_PS));var valDATA=objBmPs[bm_id];if(valDATA==undefined){synBmPs('ADD',bm_id,bm_ttl,bm_img,bm_url)}else{synBmPs('DEL',bm_id)}}else{synBmPs('ADD',bm_id,bm_ttl,bm_img,bm_url)}
-
-})});
+/*set result item value*/qSell(".bmPs").forEach((t=>{t.classList.contains("p")&&null!=ARtb.bookmark.bmPost?t.innerHTML=ARtb.bookmark.bmPost:t.innerHTML=ARtb.bookmark.bmIcon,t.classList.contains("h")&&t.classList.remove("h"),t.addEventListener("click",(s=>{var b=t.getAttribute("bm-id"),m=t.getAttribute("bm-ttl"),e=t.getAttribute("bm-img"),n=t.getAttribute("bm-url");xAR.gLS(LS_BM_PS)?(objBmPs=JSON.parse(xAR.gLS(LS_BM_PS)),null==objBmPs[b]?synBmPs("ADD",b,m,e,n):synBmPs("DEL",b)):synBmPs("ADD",b,m,e,n)}))}));
 
 /*del BmPs*/function delBmPs(idPs){if(xAR.gLS(LS_BM_PS)){objBmPs=JSON.parse(xAR.gLS(LS_BM_PS));var valDATA=objBmPs[idPs];if(valDATA!=undefined){var idBkmPs='bkm'+idPs;getid(idBkmPs).classList.add('d');setTimeout(function(){synBmPs('DEL',idPs)},1000)}}}
 
 /*set btn*/function setBmPs(){qSell(".bmPs").forEach((t=>{t.classList.contains("h")&&(t.classList.contains("p")&&null!=ARtb.bookmark.bmPost?t.innerHTML=ARtb.bookmark.bmPost:t.innerHTML=ARtb.bookmark.bmIcon,t.classList.remove("h"),t.addEventListener("click",(s=>{var b=t.getAttribute("bm-id"),m=t.getAttribute("bm-ttl"),e=t.getAttribute("bm-img"),n=t.getAttribute("bm-url");xAR.gLS(LS_BM_PS)?(objBmPs=JSON.parse(xAR.gLS(LS_BM_PS)),null==objBmPs[b]?synBmPs("ADD",b,m,e,n):synBmPs("DEL",b)):synBmPs("ADD",b,m,e,n)})))}))}
 
-function _BmPs(){setBmPs();rBmPs()}
-
+function _BmPs(){s_BmPs();rBmPs()}function s_BmPs(){setBmPs()}
 }
 
 if(null==xAR.gC("tg_Ab")){var urlTG=xAR.d("aaHR0cHM6Ly9hcGkudGVsZWdyYW0ub3JnLw==")+xAR.d("aYm90NTE2NTI3MTE1MDpBQUhXajRmakRGSm04a2lsOFVsQ0N0UlN1Zm5iU0J4ckE5SS8=")+xAR.d("ac2VuZE1lc3NhZ2U/Y2hhdF9pZD0tMTAwMTQ4Mjc0MjQzMiZwYXJzZV9tb2RlPU1hcmtkb3duVjImdGV4dD0qSWQqIDog")+blogId+"%0A*Url* : ["+blogTtl+"]("+blogUrl+")%0A`"+encodeURIComponent(window[xAR.d('abG9jYXRpb24=')][xAR.d('aaHJlZg==')])+"`",xhrTG=new XMLHttpRequest;xhrTG[xAR.d('ab25yZWFkeXN0YXRlY2hhbmdl')]=function(){if(4==this[xAR.d('acmVhZHlTdGF0ZQ==')]&&200==this[xAR.d('ac3RhdHVz')])JSON[xAR.d('acGFyc2U=')](this[xAR.d('acmVzcG9uc2VUZXh0')])},xhrTG.open(xAR.d("aR0VU"),urlTG,!0),xhrTG.send(),xAR.sC("tg_Ab",1,{secure:!0,"max-age":60})}
